@@ -34,5 +34,5 @@ body {
 }
 
 #app {
-  @apply container mx-auto px-4 py-10 flex-grow h-1;
+  @apply container mx-auto px-4 py-10 flex-grow h-1 max-w-2xl grid gap-2 content-start;
 }
