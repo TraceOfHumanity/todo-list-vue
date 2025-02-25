@@ -1,1 +1,38 @@
 @import "tailwindcss";
+
+@theme {
+  --bodyBgFrom: #c2f5e0;
+  --bodyBgTo: #f7aeb5;
+}
+
+body {
+  background: linear-gradient(
+    to bottom right,
+    var(--bodyBgFrom),
+    var(--bodyBgTo)
+  );
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../public/bgPattern.svg");
+    background-position: center;
+    z-index: -1;
+  }
+}
+
+#app {
+  @apply container mx-auto px-4 py-10 flex-grow h-1;
+}
