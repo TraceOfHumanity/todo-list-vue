@@ -14,6 +14,7 @@ const title = ref("");
 const addTodo = () => {
   todoStore.addTodo(title.value);
   title.value = "";
+  modalsStore.isAddTodoModalOpen = false;
 };
 </script>
 
@@ -23,7 +24,7 @@ const addTodo = () => {
     title="Add Todo"
     @close="modalsStore.isAddTodoModalOpen = false"
   >
-    <div class="grid gap-2 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <div class="grid gap-2">
       <BaseInput v-model="title" />
       <BaseButton @click="addTodo">Add Todo</BaseButton>
     </div>
