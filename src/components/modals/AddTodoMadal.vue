@@ -3,8 +3,8 @@ import { ref } from "vue";
 import { useTodoStore } from "../../stores/useTodoStore";
 import BaseInput from "../base/BaseInput.vue";
 import BaseButton from "../base/BaseButton.vue";
-import BaseModal from "./BaseModal.vue";
 import { useModalsStore } from "../../stores/useModalsStore";
+import ModalsWrapper from "./ModalsWrapper.vue";
 
 const todoStore = useTodoStore();
 const modalsStore = useModalsStore();
@@ -19,7 +19,7 @@ const addTodo = () => {
 </script>
 
 <template>
-  <BaseModal
+  <ModalsWrapper
     :isOpen="modalsStore.isAddTodoModalOpen"
     title="Add Todo"
     @close="modalsStore.isAddTodoModalOpen = false"
@@ -28,5 +28,5 @@ const addTodo = () => {
       <BaseInput v-model="title" />
       <BaseButton @click="addTodo">Add Todo</BaseButton>
     </div>
-  </BaseModal>
+  </ModalsWrapper>
 </template>
