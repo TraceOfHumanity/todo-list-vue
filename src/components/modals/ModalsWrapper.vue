@@ -13,76 +13,25 @@ const emit = defineEmits<{
 
 <template>
   <Teleport to="body">
-    <div v-if="isOpen" class="modal-overlay" @click="emit('close')">
-      <div class="modal-content" @click.stop>
-        <div class="modal-header">
+    <div v-if="isOpen" class="absolute inset-0 flex items-center justify-center bg-black/50" @click="emit('close')">
+      <div class="bg-bodyBg rounded-lg p-4 w-5/6 max-w-2xl grid gap-2 content-start" @click.stop>
+        <div class="flex justify-between items-center">
           <h3 v-if="title" class="text-xl font-semibold">{{ title }}</h3>
           <button 
-            class="close-button"
+            class="bg-transparent border-none text-2xl cursor-pointer"
             @click="emit('close')"
             aria-label="Close modal"
           >
             ✕
           </button>
         </div>
-        <div class="modal-body">
+        <div>
           <slot />
         </div>
-        <div class="modal-footer">
+        <div class="flex justify-center gap-2">
           <slot name="footer" />
         </div>
       </div>
     </div>
   </Teleport>
 </template>
-
-<style scoped>
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  max-width: 500px;
-  width: 90%;
-  max-height: 90vh;
-  overflow-y: auto;
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.close-button {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  line-height: 1;
-}
-
-.modal-body {
-  margin-bottom: 1rem;
-}
-
-.modal-footer {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.5rem;
-}
-</style>

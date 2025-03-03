@@ -16,17 +16,25 @@ const addTodo = () => {
   title.value = "";
   modalsStore.isAddTodoModalOpen = false;
 };
+
+const cancel = () => {
+  modalsStore.isAddTodoModalOpen = false;
+  title.value = "";
+};
 </script>
 
 <template>
   <ModalsWrapper
     :isOpen="modalsStore.isAddTodoModalOpen"
     title="Add Todo"
-    @close="modalsStore.isAddTodoModalOpen = false"
+    @close="cancel"
   >
     <div class="grid gap-2">
       <BaseInput v-model="title" />
-      <BaseButton @click="addTodo">Add Todo</BaseButton>
     </div>
+    <template #footer>
+      <BaseButton @click="cancel">Cancel</BaseButton>
+      <BaseButton @click="addTodo">Add Todo</BaseButton>
+    </template>
   </ModalsWrapper>
 </template>

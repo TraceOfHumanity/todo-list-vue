@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --bodyBg: #2A2A2A;
-  --text: #fff;
+  --color-bodyBg: #2A2A2A;
+  --color-text: #fff;
 }
 
 body {
-  background: var(--bodyBg);
-  color: var(--text);
+  background: var(--color-bodyBg);
+  color: var(--color-text);
   overflow: hidden;
   background-size: cover;
   background-position: center;
