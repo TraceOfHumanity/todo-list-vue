@@ -1,5 +1,7 @@
 <template>
-  <div class="rounded-lg backdrop-blur-xs border border-black/30 p-2 shadow-[2px_4px_3px_rgba(0,0,0,0.5)]">
+  <div
+    class="rounded-lg max-h-[80vh] overflow-y-auto backdrop-blur-xs border border-black/30 p-2 shadow-[2px_4px_3px_rgba(0,0,0,0.5)]"
+  >
     <slot></slot>
   </div>
 </template>

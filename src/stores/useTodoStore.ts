@@ -7,6 +7,7 @@ export const useTodoStore = defineStore("todo", () => {
   const todos = ref<Todo[]>([]);
 
   const addTodo = (title: string) => {
+    if (!title) return;
     const todo: Todo = {
       id: uuidv4(),
       title,
@@ -15,8 +16,13 @@ export const useTodoStore = defineStore("todo", () => {
     todos.value.push(todo);
   };
 
+  const deleteTodo = (id: string) => {
+    todos.value = todos.value.filter((todo) => todo.id !== id);
+  };
+
   return {
     todos,
     addTodo,
+    deleteTodo,
   };
 });

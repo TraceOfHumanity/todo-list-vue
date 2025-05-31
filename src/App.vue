@@ -8,8 +8,6 @@ import Todo from "./components/Todo";
     <Todo.input />
     <Todo.filter />
     <Todo.empty />
-    <Todo.list>
-      <Todo.item />
-    </Todo.list>
+    <Todo.list />
   </Todo>
 </template>
