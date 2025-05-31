@@ -2,8 +2,8 @@
   <div class="grid grid-cols-[auto_1fr_auto] items-center gap-2">
     <input type="checkbox" v-model="props.todo.completed" />
     <span>{{ props.todo.title }}</span>
-    <BaseButton class="bg-red-600 ml-auto" @click="todoStore.deleteTodo(props.todo.id)">
-      <img src="/bin.svg" alt="delete" class="w-4 h-4 text-white" />
+    <BaseButton class="bg-red ml-auto" @click="todoStore.deleteTodo(props.todo.id)">
+      <img src="/bin.svg" alt="delete" class="w-5 h-5" />
     </BaseButton>
   </div>
 </template>
