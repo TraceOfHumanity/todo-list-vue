@@ -4,10 +4,10 @@ import Todo from "./components/Todo";
 
 <template>
   <Todo>
-    <Todo.header />
-    <Todo.input />
-    <Todo.filter />
-    <Todo.empty />
-    <Todo.list />
+    <Todo.Header />
+    <Todo.Input />
+    <Todo.Filter />
+    <Todo.Empty />
+    <Todo.List />
   </Todo>
 </template>

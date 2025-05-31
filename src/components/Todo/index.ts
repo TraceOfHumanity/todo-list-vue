@@ -8,9 +8,9 @@ import TodoHeader from "./TodoHeader.vue";
 
 export default Todo;
 
-Todo.header = TodoHeader;
-Todo.filter = TodoFilter;
-Todo.empty = TodoEmpty;
-Todo.input = TodoInput;
-Todo.list = TodoList;
-Todo.item = TodoItem;
+Todo.Header = TodoHeader;
+Todo.Filter = TodoFilter;
+Todo.Empty = TodoEmpty;
+Todo.Input = TodoInput;
+Todo.List = TodoList;
+Todo.Item = TodoItem;
