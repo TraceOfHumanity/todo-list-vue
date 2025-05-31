@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Todo from "./components/Todo";
+  import Todo from "./components/Todo";
 </script>
 
 <template>
