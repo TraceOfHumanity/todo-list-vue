@@ -27,9 +27,10 @@
   import {inject} from "vue";
   import type {Ref} from "vue";
   import BaseButton from "../Base/BaseButton.vue";
+  import type {TypeFilter} from "./types";
 
-  const filterValue = inject<Ref<"completed" | "all" | "active">>("filter");
-  const setFilter = inject<(value: "completed" | "all" | "active") => void>("setFilter");
+  const filterValue = inject<Ref<TypeFilter>>("filter");
+  const setFilter = inject<(value: TypeFilter) => void>("setFilter");
 
   if (!setFilter) {
     throw new Error("setFilter is not provided");

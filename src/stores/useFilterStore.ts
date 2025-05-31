@@ -5,8 +5,8 @@ import type {TypeFilter} from "../components/Todo/types";
 export const useFilterStore = defineStore("filter", () => {
   const filter = ref<TypeFilter>("all");
 
-  const setFilter = (filter: TypeFilter) => {
-    filter = filter;
+  const setFilter = (newFilter: TypeFilter) => {
+    filter.value = newFilter;
   };
 
   return {

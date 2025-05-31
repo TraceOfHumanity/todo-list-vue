@@ -7,14 +7,16 @@
 </template>
 
 <script setup lang="ts">
-  import {provide} from "vue";
+  import {computed, provide} from "vue";
   import {useTodoStore} from "../../stores/useTodoStore";
   import {useFilterStore} from "../../stores/useFilterStore";
 
   const todoStore = useTodoStore();
   const filterStore = useFilterStore();
 
+  const filterValue = computed(() => filterStore.filter);
+
   provide("todos", todoStore.todos);
-  provide("filter", filterStore.filter);
+  provide("filter", filterValue);
   provide("setFilter", filterStore.setFilter);
 </script>
