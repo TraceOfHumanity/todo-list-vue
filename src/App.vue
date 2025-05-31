@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import Header from "./components/common/Header.vue";
-import TodoFilter from "./components/TodoFilter.vue";
-import TodoList from "./components/TodoList.vue";
-import Modals from "./components/modals/Modals.vue";
+import Todo from "./components/Todo";
 </script>
 
 <template>
-  <Header />
-  <TodoFilter />
-  <TodoList />
-  <Modals />
+  <Todo>
+    <Todo.filter />
+    <Todo.empty />
+    <Todo.input />
+    <Todo.list>
+      <Todo.item />
+    </Todo.list>
+  </Todo>
 </template>

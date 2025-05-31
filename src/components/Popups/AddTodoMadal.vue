@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { useTodoStore } from "../../stores/useTodoStore";
+import {ref} from "vue";
+import {useTodoStore} from "../../stores/useTodoStore";
 import BaseInput from "../base/BaseInput.vue";
 import BaseButton from "../base/BaseButton.vue";
-import { useModalsStore } from "../../stores/useModalsStore";
+import {useModalsStore} from "../../stores/useModalsStore";
 import ModalsWrapper from "./ModalsWrapper.vue";
 
 const todoStore = useTodoStore();
@@ -24,11 +24,7 @@ const cancel = () => {
 </script>
 
 <template>
-  <ModalsWrapper
-    :isOpen="modalsStore.isAddTodoModalOpen"
-    title="Add Todo"
-    @close="cancel"
-  >
+  <ModalsWrapper :isOpen="modalsStore.isAddTodoModalOpen" title="Add Todo" @close="cancel">
     <div class="grid gap-2">
       <BaseInput v-model="title" />
     </div>
