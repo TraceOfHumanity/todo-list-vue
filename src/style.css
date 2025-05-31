@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bodyBgFrom: #364649;
-  --color-bodyBgVia: #4a6569;
-  --color-bodyBgTo: #708f96;
+  --color-bodyBg: #191919;
   --color-text: #fff;
+  --color-green: #20d3aa;
+  --color-red: #eb3b67;
 }
 
 body {
-  background: linear-gradient(to bottom left, var(--color-bodyBgFrom), var(--color-bodyBgVia), var(--color-bodyBgTo));
+  background: var(--color-bodyBg);
   color: var(--color-text);
   overflow: hidden;
   background-size: cover;
@@ -30,6 +30,10 @@ body {
     background-position: center;
     z-index: -1;
   }
+}
+
+button {
+  cursor: pointer;
 }
 
 #app {

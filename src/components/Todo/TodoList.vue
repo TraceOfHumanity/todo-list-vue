@@ -1,12 +1,12 @@
 <template>
   <div class="grid gap-2">
-    <TodoItem v-for="todo in todoStore.todos" :key="todo.id" :todo="todo" />
+    <TodoItem v-for="todo in todos" :key="todo" :todo="todo" />
   </div>
 </template>
 
 <script setup lang="ts">
-import {useTodoStore} from "../../stores/useTodoStore";
+import {inject} from "vue";
 import TodoItem from "./TodoItem.vue";
 
-const todoStore = useTodoStore();
+const todos = inject("todos");
 </script>
