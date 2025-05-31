@@ -6,18 +6,18 @@
       class="w-5 h-5"
     />
     <BaseButton
-      @click="filter = 'all'"
-      :class="filter !== 'all' ? 'bg-green' : ''"
+      @click="setFilter('all')"
+      :class="filterValue !== 'all' ? 'bg-green' : ''"
       >All</BaseButton
     >
     <BaseButton
-      @click="filter = 'active'"
-      :class="filter !== 'active' ? 'bg-green' : ''"
+      @click="setFilter('active')"
+      :class="filterValue !== 'active' ? 'bg-green' : ''"
       >Active</BaseButton
     >
     <BaseButton
-      @click="filter = 'completed'"
-      :class="filter !== 'completed' ? 'bg-green' : ''"
+      @click="setFilter('completed')"
+      :class="filterValue !== 'completed' ? 'bg-green' : ''"
       >Completed</BaseButton
     >
   </div>
@@ -25,7 +25,13 @@
 
 <script setup lang="ts">
   import {inject} from "vue";
+  import type {Ref} from "vue";
   import BaseButton from "../Base/BaseButton.vue";
 
-  const filter = inject("filter");
+  const filterValue = inject<Ref<"completed" | "all" | "active">>("filter");
+  const setFilter = inject<(value: "completed" | "all" | "active") => void>("setFilter");
+
+  if (!setFilter) {
+    throw new Error("setFilter is not provided");
+  }
 </script>

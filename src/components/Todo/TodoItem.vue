@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-  import type {Todo} from "../../types/todo";
+  import type {Todo} from "./types";
   import {useTodoStore} from "../../stores/useTodoStore";
   import BaseButton from "../Base/BaseButton.vue";
 

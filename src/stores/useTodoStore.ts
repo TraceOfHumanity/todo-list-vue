@@ -1,6 +1,6 @@
 import {defineStore} from "pinia";
 import {ref} from "vue";
-import type {Todo} from "../types/todo";
+import type {Todo} from "../components/Todo/types";
 import {v4 as uuidv4} from "uuid";
 
 export const useTodoStore = defineStore("todo", () => {
