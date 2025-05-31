@@ -2,12 +2,13 @@
 
 @theme {
   --color-bodyBgFrom: #364649;
+  --color-bodyBgVia: #4a6569;
   --color-bodyBgTo: #708f96;
   --color-text: #fff;
 }
 
 body {
-  background: linear-gradient(to bottom left, var(--color-bodyBgFrom), var(--color-bodyBgTo));
+  background: linear-gradient(to bottom left, var(--color-bodyBgFrom), var(--color-bodyBgVia), var(--color-bodyBgTo));
   color: var(--color-text);
   overflow: hidden;
   background-size: cover;
@@ -25,7 +26,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../public/bgPattern.svg");
+    background-image: url("../public/bgPattern2.svg");
     background-position: center;
     z-index: -1;
   }
