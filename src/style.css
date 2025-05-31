@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bodyBg: #2A2A2A;
+  --color-bodyBgFrom: #364649;
+  --color-bodyBgTo: #708f96;
   --color-text: #fff;
 }
 
 body {
-  background: var(--color-bodyBg);
+  background: linear-gradient(to bottom left, var(--color-bodyBgFrom), var(--color-bodyBgTo));
   color: var(--color-text);
   overflow: hidden;
   background-size: cover;
