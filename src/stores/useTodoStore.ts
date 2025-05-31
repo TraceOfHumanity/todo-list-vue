@@ -1,14 +1,14 @@
 import {defineStore} from "pinia";
 import {ref} from "vue";
-import type {Todo} from "../components/Todo/types";
+import type {TypeTodo} from "../components/Todo/types";
 import {v4 as uuidv4} from "uuid";
 
 export const useTodoStore = defineStore("todo", () => {
-  const todos = ref<Todo[]>([]);
+  const todos = ref<TypeTodo[]>([]);
 
   const addTodo = (title: string) => {
     if (!title) return;
-    const todo: Todo = {
+    const todo: TypeTodo = {
       id: uuidv4(),
       title,
       completed: false,
@@ -17,7 +17,7 @@ export const useTodoStore = defineStore("todo", () => {
   };
 
   const deleteTodo = (id: string) => {
-    todos.value = todos.value.filter((todo) => todo.id !== id);
+    todos.value = todos.value.filter((todo: TypeTodo) => todo.id !== id);
   };
 
   return {

@@ -19,13 +19,13 @@
 </template>
 
 <script setup lang="ts">
-  import type {Todo} from "./types";
+  import type {TypeTodo} from "./types";
   import {useTodoStore} from "../../stores/useTodoStore";
   import BaseButton from "../Base/BaseButton.vue";
 
   const todoStore = useTodoStore();
 
   const props = defineProps<{
-    todo: Todo;
+    todo: TypeTodo;
   }>();
 </script>
