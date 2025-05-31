@@ -1,8 +1,10 @@
 <template>
   <div class="grid gap-2">
     <BaseInput v-model="title" />
-    <BaseButton @click="addTodo">Add Todo</BaseButton>
-    <BaseButton @click="cancel">Cancel</BaseButton>
+    <div class="grid grid-cols-2 gap-2">
+      <BaseButton class="bg-red-600" @click="cancel">Cancel</BaseButton>
+      <BaseButton class="bg-green-600" @click="addTodo">Add</BaseButton>
+    </div>
   </div>
 </template>
 
