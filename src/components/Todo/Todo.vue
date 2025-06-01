@@ -18,7 +18,17 @@
 
   const filterValue = computed(() => filterStore.filter);
 
-  provide("todos", todos);
+  const filteredTodos = computed(() => {
+    if (filterValue.value === "all") {
+      return todos.value;
+    } else if (filterValue.value === "completed") {
+      return todos.value.filter((todo) => todo.completed);
+    } else {
+      return todos.value.filter((todo) => !todo.completed);
+    }
+  });
+
+  provide("todos", filteredTodos);
   provide("filter", filterValue);
   provide("setFilter", filterStore.setFilter);
   provide("addTodo", todoStore.addTodo);
