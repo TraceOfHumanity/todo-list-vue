@@ -19,4 +19,6 @@
   provide("todos", todoStore.todos);
   provide("filter", filterValue);
   provide("setFilter", filterStore.setFilter);
+  provide("addTodo", todoStore.addTodo);
+  provide("deleteTodo", todoStore.deleteTodo);
 </script>

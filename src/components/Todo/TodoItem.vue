@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-[auto_1fr_auto] items-center gap-2">
+  <div class="grid grid-cols-[auto_1fr_auto] items-center gap-2 [&:not(:last-child)]:border-b border-green/20 pb-2">
     <BaseCheckbox
       :is-checked="props.todo.completed"
       @update:isChecked="props.todo.completed = $event"
