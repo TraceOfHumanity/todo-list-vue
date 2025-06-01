@@ -14,9 +14,11 @@
   const todoStore = useTodoStore();
   const filterStore = useFilterStore();
 
+  const todos = computed(() => todoStore.todos);
+
   const filterValue = computed(() => filterStore.filter);
 
-  provide("todos", todoStore.todos);
+  provide("todos", todos);
   provide("filter", filterValue);
   provide("setFilter", filterStore.setFilter);
   provide("addTodo", todoStore.addTodo);

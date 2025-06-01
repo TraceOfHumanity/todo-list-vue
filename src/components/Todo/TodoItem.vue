@@ -4,10 +4,10 @@
       :is-checked="props.todo.completed"
       @update:isChecked="props.todo.completed = $event"
     />
-    <span>{{ props.todo.title }}</span>
+    <span :class="props.todo.completed ? 'line-through' : ''">{{ props.todo.title }}</span>
     <BaseButton
       class="bg-red ml-auto"
-      @click="todoStore.deleteTodo(props.todo.id)"
+      @click="deleteTodo?.(props.todo.id)"
     >
       <img
         src="/bin.svg"
@@ -20,13 +20,13 @@
 
 <script setup lang="ts">
   import type {TypeTodo} from "./types";
-  import {useTodoStore} from "../../stores/useTodoStore";
   import BaseButton from "../Base/BaseButton.vue";
   import BaseCheckbox from "../Base/BaseCheckbox.vue";
-
-  const todoStore = useTodoStore();
+  import {inject} from "vue";
 
   const props = defineProps<{
     todo: TypeTodo;
   }>();
+
+  const deleteTodo = inject<(id: string) => void>("deleteTodo");
 </script>
