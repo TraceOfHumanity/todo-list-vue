@@ -1,8 +1,8 @@
 <template>
   <div class="grid grid-cols-[auto_1fr_auto] items-center gap-2">
-    <input
-      type="checkbox"
-      v-model="props.todo.completed"
+    <BaseCheckbox
+      :is-checked="props.todo.completed"
+      @update:isChecked="props.todo.completed = $event"
     />
     <span>{{ props.todo.title }}</span>
     <BaseButton
@@ -22,6 +22,7 @@
   import type {TypeTodo} from "./types";
   import {useTodoStore} from "../../stores/useTodoStore";
   import BaseButton from "../Base/BaseButton.vue";
+  import BaseCheckbox from "../Base/BaseCheckbox.vue";
 
   const todoStore = useTodoStore();
 

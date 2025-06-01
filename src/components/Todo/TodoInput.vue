@@ -1,12 +1,10 @@
 <template>
   <div class="grid gap-2">
-    <BaseInput v-model="title" />
-    <div class="grid grid-cols-2 gap-2">
-      <BaseButton
-        class="bg-red"
-        @click="cancel"
-        >Cancel</BaseButton
-      >
+    <BaseInput
+      v-model="title"
+      placeholder="Add a new todo"
+    />
+    <div class="grid">
       <BaseButton
         class="bg-green"
         @click="addTodo"
@@ -28,10 +26,6 @@
 
   const addTodo = () => {
     todoStore.addTodo(title.value);
-    title.value = "";
-  };
-
-  const cancel = () => {
     title.value = "";
   };
 </script>
