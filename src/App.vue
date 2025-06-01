@@ -7,7 +7,6 @@
     <Todo.Header />
     <Todo.Input />
     <Todo.Filter />
-    <Todo.Empty />
     <Todo.List />
   </Todo>
 </template>

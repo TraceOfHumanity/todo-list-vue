@@ -7,17 +7,17 @@
     />
     <BaseButton
       @click="setFilter('all')"
-      :class="filterValue !== 'all' ? 'bg-green' : ''"
+      :class="filterValue !== 'all' ? 'opacity-20' : ''"
       >All</BaseButton
     >
     <BaseButton
       @click="setFilter('active')"
-      :class="filterValue !== 'active' ? 'bg-green' : ''"
+      :class="filterValue !== 'active' ? 'opacity-20' : ''"
       >Active</BaseButton
     >
     <BaseButton
       @click="setFilter('completed')"
-      :class="filterValue !== 'completed' ? 'bg-green' : ''"
+      :class="filterValue !== 'completed' ? 'opacity-20' : ''"
       >Completed</BaseButton
     >
   </div>
