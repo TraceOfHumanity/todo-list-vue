@@ -26,7 +26,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../public/bgPattern2.svg");
+    background-image: url("../public/bgPattern.svg");
     background-position: center;
     z-index: -1;
   }
