@@ -6,8 +6,9 @@
     />
     <div class="grid">
       <BaseButton
-        class="bg-green"
+        class="bg-green disabled:opacity-50 disabled:!cursor-not-allowed duration-200"
         @click="handleAddTodo"
+        :disabled="!title"
         >Add</BaseButton
       >
     </div>
